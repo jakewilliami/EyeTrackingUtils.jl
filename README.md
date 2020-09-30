@@ -6,7 +6,7 @@
 
 ## Note
 
-Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Jake Ireland](https://github.com/jakewilliami) and [Alexandros Tantos](https://github.com/atantos).
+Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos) and [Jake Ireland](https://github.com/jakewilliami).
 
 It is preferrable that you have `coreutils` (or something similar, giving you access to `realpath`) installed for the project path to be interpretted by the shebang correctly.
 
