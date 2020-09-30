@@ -31,12 +31,12 @@ This package has two main steps in the workflow, whose second step has three pat
 
 ## Timeline of Progression
 
- - [](https://github.com/jakewilliami/EyeTracking.jl/commit/) &mdash; Began working on the package.
+ - [cdf151e](https://github.com/jakewilliami/EyeTracking.jl/commit/cdf151e) &mdash; Began working on the package.
 
 ## To Do
 
  - Summarise ([Query.jl?](https://github.com/queryverse/Query.jl))
- - Read from edf file.
+ - Read from [EDF](https://github.com/beacon-biosignals/EDF.jl) file.
 
 ## A Note on running on BSD:
 
