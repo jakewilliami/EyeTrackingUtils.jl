@@ -25,9 +25,12 @@ To obtain any dependencies.  This step will not be necessary once this package i
 This package has two main steps in the workflow, whose second step has three paths.  This workflow is drawn from [`eyetrackingR`](http://www.eyetracking-r.com/workflow).
  1. *Data cleaning* &mdash; obtain data and information about data from various eye-tracking sources (this step should be extremely robust), and puts data into a standardised format for analyses.
  2. *Analyses* &mdash;:
-  a) **Overall Looking**; 
-  b) **Onset-Contingent**;
-  c) **Time-Course of Looking**.
+ 
+   &#9;&#9; a) **Overall Looking**; 
+   
+   &#9;&#9; b) **Onset-Contingent**;
+   
+   &#9;&#9; c) **Time-Course of Looking**.
 
 ## Timeline of Progression
 
