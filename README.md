@@ -2,9 +2,11 @@
 	Eye Tracking
 </h1>
 
-[![Code Style: Blue][code-style-img]][code-style-url]
+[![Code Style: Blue][code-style-img]][code-style-url] [![Build Status](https://travis-ci.com/jakewilliami/EyeTracking.jl.svg?branch=master)](https://travis-ci.com/jakewilliami/EyeTracking.jl) ![Project Status](https://img.shields.io/badge/status-maturing-green)
 
 ## Note
+
+**This package is under development**
 
 Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos) and [Jake Ireland](https://github.com/jakewilliami).
 
