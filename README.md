@@ -6,7 +6,7 @@
 
 ## Note
 
-**This package is under development**
+**THIS PACKAGE IS UNDER DEVELOPMENT AND IS NOT READY FOR USE**
 
 Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos) and [Jake Ireland](https://github.com/jakewilliami).
 
