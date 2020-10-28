@@ -5,6 +5,11 @@
     =#
     
 using DataFrames
+using Query: @collect
+
+using Lazy: @> # or using DataConvenience: @>, but Lazy exports groupby
+using DataFramesMeta: @where
+using Statistics: mean
 
 _isbool(x)::Bool = isequal(x, true) || isequal(x, false) ? true : false
 _iscategorical(df::DataFrame, x)::Bool = isa(df.x, CategoricalArray)
@@ -98,10 +103,10 @@ function make_clean_data(
     end
     
     if "Time" ∈ names(data)
-     @warn """Your dataset has a column called 'time', but this column
-     is reserved for EyeTrackingUtils.  Will rename to 'TimeOriginal'...
-     """
-     rename!(data, Dict(:Time => "TimeOriginal"))
+        @warn """Your dataset has a column called 'time', but this column
+        is reserved for EyeTrackingUtils.  Will rename to 'TimeOriginal'...
+        """
+        rename!(data, Dict(:Time => "TimeOriginal"))
     end
     
     ## Verify columns:
@@ -126,4 +131,49 @@ function make_clean_data(
     end
     
     ## Deal with non-AOI looks:
+    if treat_non_aoi_looks_as_missing
+        any_aoi = sum(, dims=2) > 0 ? # second dimension is the sum of the rows
+        any_aoi = sum.(skipmissing.(eachrow(out.data_options[Symbol(aoi_columns)]))) > 0
+        out.data_options[Symbol(trackloss_column)](!any_aoi) = true
+    end
+    
+    ## Set All AOI rows with trackloss to NA:
+    # this ensures that any calculations of proportion-looking will not include trackloss in the denominator
+    for aoi in data_options[Symbol(aoi_columns)]
+        out.aoi[out.data_options[Symbol(trackloss_column)]] = missing # or nothing?
+    end
+    
+    # Check for duplicate values of Trial column within Participants
+    duplicates = @> out begin
+        groupby([:participant_column, :trial_column, :time_column])
+        combine(nrow => :n)
+        @where :n .> 1
+    end
+    
+    if nrow(duplicates) > 0
+        println(duplicates)
+        throw(error("""
+        It appears that `trial_column` is not unique within participants. See above for a summary
+        of which participant*trials have duplicate timestamps. EyeTrackingUtils requires that each participant
+        only have a single trial with the same `trial_column` value. If you repeated items in your experiment,
+        use `item_column` to specify the name of the item, and set `trial_column` to a unique value
+        (e.g., the trial index).
+        """))
+    end
+    
+    out = @> out begin
+        groupby([:participant_column, :trial_column, :time_column])
+    end
+    
 end
+
+
+struct eR_data_eR_df
+    out::DataFrame
+    eR
+end
+
+## Assign attribute:
+class(out) <- c("eyetrackingR_data", "eyetrackingR_df", class(out))
+attr(out, "eyetrackingR") <- list(data_options = data_options)
+return(out)
