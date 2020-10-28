@@ -4,6 +4,8 @@ language: julia
 os:
   - linux
   - osx
+  - windows
+  - bsd
 
 julia:
   - 1.0
