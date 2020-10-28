@@ -32,10 +32,10 @@ This package has two main steps in the workflow, whose second step has three pat
 
 ## Obtaining Test Data
 ```bash
-cd /tmp/
-wget https://raw.githubusercontent.com/jwdink/eyetrackingR/master/data/word_recognition.rda
-Rscript -e 'load("word_recognition.rda"); write.csv(word_recognition, "word_recognition.csv")'
-mv word_recognition.csv /path/to/working/directory/
+$ cd /tmp/
+$ wget https://raw.githubusercontent.com/jwdink/eyetrackingR/master/data/word_recognition.rda
+$ Rscript -e 'load("word_recognition.rda"); write.csv(word_recognition, "word_recognition.csv")'
+$ mv word_recognition.csv /path/to/working/directory/
 ```
 
 ## Timeline of Progression
