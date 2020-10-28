@@ -4,11 +4,23 @@
     "${BASH_SOURCE[0]}" "$@"
     =#
     
-include(joinpath(dirname(dirname(@__FILE__)), "src", "EyeTracking.jl"))
+include(joinpath(dirname(@__DIR__), "src", "EyeTrackingUtils.jl"))
 
-using .EyeTracking
+using .EyeTrackingUtils
 using Test
+using CSV, DataFrames # CSV is currently a test-specific dependency
 
-@testset "EyeTracking.jl" begin
-    # Write your tests here.
+const data_file = joinpath(dirname(@__DIR__), "data", "word_recognition.csv")
+
+@time @testset "EyeTracking.jl" begin
+    word_recognition = DataFrame(CSV.File(data_file))
+    @test data = make_clean_data(
+        word_recognition,
+        participant_column = :ParticipantName,
+        trial_column = :Trial,
+        time_column = :TimeFromTrialOnset,
+        trackloss_column = :TrackLoss,
+        aoi_columns = [:Animate, :Inanimate],
+        treat_non_aoi_looks_as_missing = true
+        )
 end
