@@ -9,8 +9,5 @@ module EyeTrackingUtils
 export make_clean_data
 
 include(joinpath(dirname(@__FILE__), "prep.jl"))
-include(joinpath(dirname(@__FILE__), "clean.jl"))
-include(joinpath(dirname(@__FILE__), "edf.jl"))
-include(joinpath(dirname(@__FILE__), "utils.jl"))
 
 end # end module
