@@ -134,7 +134,7 @@ function make_clean_data(
     if treat_non_aoi_looks_as_missing
         # any_aoi = sum(, dims=2) > 0 ? # second dimension is the sum of the rows
         any_aoi = sum.(skipmissing.(eachrow(out.data_options[Symbol(aoi_columns)]))) > 0
-        out.data_options[Symbol(trackloss_column)](!any_aoi) = true
+        out.data_options[Symbol(trackloss_column)][!any_aoi] = true
     end
     
     ## Set All AOI rows with trackloss to NA:
