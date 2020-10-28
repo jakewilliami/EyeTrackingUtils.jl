@@ -5,7 +5,7 @@
     =#
     
 using DataFrames
-using Query: @collect
+using Query
 
 using Lazy: @> # or using DataConvenience: @>, but Lazy exports groupby
 using DataFramesMeta: @where
@@ -174,6 +174,6 @@ struct eR_data_eR_df
 end
 
 ## Assign attribute:
-class(out) <- c("eyetrackingR_data", "eyetrackingR_df", class(out))
-attr(out, "eyetrackingR") <- list(data_options = data_options)
-return(out)
+# class(out) <- c("eyetrackingR_data", "eyetrackingR_df", class(out))
+# attr(out, "eyetrackingR") <- list(data_options = data_options)
+# return(out)
