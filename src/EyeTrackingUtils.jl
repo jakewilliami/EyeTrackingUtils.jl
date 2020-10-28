@@ -4,7 +4,7 @@
     "${BASH_SOURCE[0]}" "$@"
     =#
 
-module EyeTracking
+module EyeTrackingUtils
 
 export make_clean_data
 

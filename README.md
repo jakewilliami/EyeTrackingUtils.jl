@@ -1,5 +1,5 @@
 <h1 align="center">
-	Eye Tracking
+	Eye Tracking Utils
 </h1>
 
 [![Code Style: Blue][code-style-img]][code-style-url] [![Build Status](https://travis-ci.com/jakewilliami/EyeTracking.jl.svg?branch=master)](https://travis-ci.com/jakewilliami/EyeTracking.jl) ![Project Status](https://img.shields.io/badge/status-maturing-green)
@@ -8,18 +8,18 @@
 
 **THIS PACKAGE IS UNDER DEVELOPMENT AND IS NOT READY FOR USE**
 
-Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos) and [Jake Ireland](https://github.com/jakewilliami).
+Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos), [Jake Ireland](https://github.com/jakewilliami), and others.
 
 It is preferrable that you have `coreutils` (or something similar, giving you access to `realpath`) installed for the project path to be interpretted by the shebang correctly.
 
 ## Introduction
 
-This is a Julia implementation of a robust data-preparation and -analysis package using data from eye tracking experiments.  This package is designed modelling an R package called [`eyetrackingR`](https://github.com/jwdink/eyetrackingR).  This package is not to be confused with the other "EyeTracking.jl" package (at time of writing; October, 2020), which [seems to be a GUI-style experimental interface](https://github.com/dandandai/EyeTracking.jl/) (at first glance, perhaps similar to [PyGaze](https://github.com/esdalmaijer/PyGaze)).
+This is a Julia implementation of a robust data-preparation and -analysis package using data from eye tracking experiments.  This package is designed modelling an R package called [`eyetrackingR`](https://github.com/jwdink/eyetrackingR).  This package is not to be confused with the "EyeTracking.jl" package (at time of writing; October, 2020), which [seems to be a GUI-style experimental interface](https://github.com/dandandai/EyeTracking.jl/) (at first glance, perhaps similar to [PyGaze](https://github.com/esdalmaijer/PyGaze)).
 
 ## Installation and Set Up
-Ensure you `cd` into the `EyeTracking.jl` directory after `clone`ing it, and run
+Ensure you `cd` into the `EyeTrackingUtils.jl` directory after `clone`ing it, and run
 ```bash
-julia -E 'import Pkg; et_home = dirname(@__FILE__); Pkg.activate(fd_home), Pkg.instantiate()'
+julia -E 'import Pkg; etu_home = dirname(@__FILE__); Pkg.activate(etu_home), Pkg.instantiate()'
 ```
 To obtain any dependencies.  This step will not be necessary once this package is registered.
 
