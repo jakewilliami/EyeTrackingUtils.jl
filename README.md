@@ -2,7 +2,7 @@
 	Eye Tracking Utils
 </h1>
 
-[![Code Style: Blue][code-style-img]][code-style-url] [![Build Status](https://travis-ci.com/jakewilliami/EyeTracking.jl.svg?branch=master)](https://travis-ci.com/jakewilliami/EyeTracking.jl) ![Project Status](https://img.shields.io/badge/status-maturing-green)
+[![Code Style: Blue][code-style-img]][code-style-url] [![Build Status](https://travis-ci.com/jakewilliami/EyeTrackingUtils.jl.svg?branch=master)](https://travis-ci.com/jakewilliami/EyeTrackingUtils.jl) ![Project Status](https://img.shields.io/badge/status-maturing-green)
 
 ## Note
 
