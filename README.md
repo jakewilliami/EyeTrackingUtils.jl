@@ -8,7 +8,7 @@
 
 **THIS PACKAGE IS IN PRE-ALPHA AND IS UNDER DEVELOPMENT!  IT IS NOT READY FOR USE**
 
-Though we have hopes for this repository to be a registered package in the future, it is only for testing purposes, to be used in parallel to other tools, at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos), [Jake Ireland](https://github.com/jakewilliami), and others.
+Though we have high hopes for this package, it is currently not finished being developed at this point in time.  This project is currently worked on by [Alexandros Tantos](https://github.com/atantos), [Jake Ireland](https://github.com/jakewilliami), and others.
 
 ## Introduction
 
