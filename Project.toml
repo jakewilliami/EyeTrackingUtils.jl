@@ -13,7 +13,7 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 
 [compat]
 DataFrames = "0.21.8"
-DataFramesMeta = "0.5.1"
+DataFramesMeta = "0.5.1, 0.6"
 Lazy = "0.15.1"
 Query = "1.0.0"
 julia = "1"
