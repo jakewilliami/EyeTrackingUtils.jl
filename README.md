@@ -32,10 +32,16 @@ This package has two main steps in the workflow, whose second step has three pat
 
 ## Obtaining Test Data
 ```bash
+# PATH_TO_EYETRACKING="/some/path" # PLEASE FILL IN THIS LINE
 $ cd /tmp/
 $ wget https://raw.githubusercontent.com/jwdink/eyetrackingR/master/data/word_recognition.rda
 $ Rscript -e 'load("word_recognition.rda"); write.csv(word_recognition, "word_recognition.csv")'
-$ mv word_recognition.csv /path/to/working/directory/
+$ mv word_recognition.csv "$PATH_TO_EYETRACKING"/data/
+$ curl https://raw.githubusercontent.com/jwdink/eyetrackingR/master/tests/testthat/tb_output_between_subj.txt > "$PATH_TO_EYETRACKING"/data/tb_output_between_subj.txt
+$ curl https://raw.githubusercontent.com/jwdink/eyetrackingR/master/tests/testthat/tb_output_between_subj.txt > "$PATH_TO_EYETRACKING"/data/tb_output_between_subj.txt
+$ curl https://raw.githubusercontent.com/jwdink/eyetrackingR/master/tests/testthat/tb_output_interaction.txt > "$PATH_TO_EYETRACKING"/data/tb_output_interaction.txt
+$ curl https://raw.githubusercontent.com/jwdink/eyetrackingR/master/tests/testthat/tb_output_within_subj.txt > "$PATH_TO_EYETRACKING"/data/tb_output_within_subj.txt
+$ curl https://raw.githubusercontent.com/jwdink/eyetrackingR/master/tests/testthat/tclust_tb_anal.txt > "$PATH_TO_EYETRACKING"/data/tclust_tb_anal.txt
 ```
 
 ## Timeline of Progression
